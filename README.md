@@ -1,6 +1,3 @@
-11/12/15
-For SteelBrick's software engineer coding skill challenge position
-
 This JavaScript web app (which uses Angular, Bootstrap, and Angular Material Design), allows a user to create an invoice.
 Can specify name, date, invoice number, products (price & quantity), and the total cost. 
 
