@@ -1,0 +1,41 @@
+<div class="col-md-12">
+	<div class="container">
+		<form name="addInvoice" ng-submit="vm.createInvoice(vm.invoice)">
+			<fieldset>
+				<div class="row">		
+					<h4>Customer: {{vm.singleInvoice.customer}}</h4>
+					<h4>Date: {{vm.singleInvoice.date | date: "MM/dd/yyyy"}}</h4>
+					<h4>Invoice: {{vm.singleInvoice.invoiceNumber}}</h4>
+				</div>
+				<h3 style="text-align:center">Products</h3>
+				<hr>
+				<div class="productOverflow" style="color:black">
+					<table class="table table-bordered">
+						<thead>
+							<tr style="background: #333333; color:white">
+								<th>Name</th>
+								<th>Quantity</th>
+								<th>Price</th>
+								<th>Total</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr style="color:rgb(64, 64, 64)" ng-repeat="p in vm.singleInvoice.products track by $index" class="pointer" ng-class-odd="'odd'" ng-class-even="'even'">
+								<th class="invoiceText">{{p.name}}</th>
+								<th class="invoiceText">{{p.quantity}}</th>
+								<th class="invoiceText">${{p.price}}</th>
+								<th class="invoiceText">${{p.lineTotal}}</th>
+							</tr>
+						</tbody>
+					</table>
+					<div class="row">
+						<div class="col-md-10"></div>
+						<div class="col-md-2">
+							<h3 class="totalBar">Total: ${{vm.singleInvoice.total}}</h3>
+						</div>
+					</div>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+</div>

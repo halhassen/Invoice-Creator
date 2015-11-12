@@ -1,0 +1,15 @@
+<div class="container-fluid" style="background-color:white; padding-bottom:50px">
+	<div class="row"  style="padding-top:60px">
+		<div ng-repeat="i in vm.invoices track by $index" class="col-md-3">
+			<div class="invoiceBox text-center">
+				<h3 ui-sref="SingleInvoice({id: i._id})" ng-click="vm.getInvoice(i._id)">{{i.customer}}</h3>
+				Invoice #{{i.invoiceNumber}}<br>
+				Total Order Cost: ${{i.total}}<br>
+				{{i.date | date: "MM/dd/yyyy"}}<br>
+				<strong>{{i.products.length}} Products</strong><br>
+				<i class="text-center" ng-click="vm.deleteInvoice(i)" style="color:red;">Delete Invoice</i>
+			</div>
+
+		</div>
+	</div>
+</div>	
