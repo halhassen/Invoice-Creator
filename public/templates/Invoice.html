@@ -1,6 +1,6 @@
 <div class="col-md-12">
 	<div class="container">
-		<form name="addInvoice" ng-submit="vm.createInvoice(vm.invoice)">
+		<form name="addInvoice">
 			<fieldset>
 				<div class="row">
 					<div class="col-md-4">
@@ -39,7 +39,7 @@
 								<th style="width: 150px">Quantity</th>
 								<th style="width: 150px">Price</th>
 								<th style="width: 150px">Total</th>
-								<th style="width: 150px">Options <i ng-click="vm.addProduct()" style="color: green" class="fa fa-plus fa-lg"></i>
+								<th style="width: 150px"><a ng-click="vm.addProduct()" class="btn btn-success">Add Product Line Item</a>
 								</th>
 							</tr>
 						</thead>
@@ -56,10 +56,9 @@
 							</tr>
 						</tbody>
 					</table>
-
 					<span class="totalBar" style="float: right;"><h3>Total: <input money precision="2" disabled ng-model="vm.invoice.total" placeholder="${{vm.findSum()}}"/></h3></span>
 				</div>
-				<button ng-disabled="!vm.invoice.customer || !vm.invoice.date || !vm.invoice.invoiceNumber" class="btn btn-success btn-md">Submit Invoice</button>
+				<a ng-click="vm.createInvoice(vm.invoice)" ng-disabled="!vm.invoice.customer || !vm.invoice.date || !vm.invoice.invoiceNumber" class="btn btn-success btn-md">Submit Invoice</a>
 			</fieldset>
 		</form>
 	</div>
